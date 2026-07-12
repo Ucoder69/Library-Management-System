@@ -1,1 +1,0 @@
-user is done, first run database.py, then register for registering and login for login and get_book for book related things, run check_bc everytime after add_bbok or remove_book is executed.
