@@ -1,6 +1,10 @@
 # Basic Library Management System
 
-A simple library Management system that works on singular auth login for both admin and user(students). Using Python as the backend , TTK as the frontend and SQL as the post database for the functionality of the application
+A simple library Management system that works on singular auth login for both admin and user(students). Initially built on 2025 as grade 12 project by both collaborators, with further upgradation in regards with time.
+
+Using:
+1. Python as the backend , TTK as the frontend and SQL as the post database for the functionality of the application.
+2. Keyring and getpass to securely store sql root password.
 
 
 # ADMIN
@@ -11,3 +15,9 @@ A simple library Management system that works on singular auth login for both ad
 On a glance by in built functions used for safekeep.
 
 # USER
+...
+
+# CONTRIBUTORS
+
+Backend and SQL Logic: Ucoder69
+Frontend and Integrations: DrakeyIO
