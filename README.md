@@ -20,4 +20,5 @@ On a glance by in built functions used for safekeep.
 # CONTRIBUTORS
 
 Backend and SQL Logic: Ucoder69
+
 Frontend and Integrations: DrakeyIO
