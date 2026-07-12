@@ -1,17 +1,21 @@
-import os
+import keyring
 import getpass
 
-PASS_FILE = "db_pass.txt"
-
-def get_password(pwd):
-    # pwd = getpass.getpass("Enter MySQL root password: ")
-    with open(PASS_FILE, "w") as f:     # to store
-        f.write(pwd)
-
-    return pwd
+SERVICE_NAME = "PythonLibrarySystem"
+ACCOUNT_NAME = "mysql_root"
 
 def use_password():
-    if os.path.exists(PASS_FILE):
-        with open(PASS_FILE, "r") as f:
-            return f.read().strip()     # password already store
-    raise RuntimeError("Database password not found")
+    """Looks for the password in the os vault. 
+    If first run, it prompts the user securely."""
+    
+    password = keyring.get_password(SERVICE_NAME, ACCOUNT_NAME)
+    
+    if password is None:
+        print("--- First Time Database Setup ---")
+        # getpass hides the typing so no one can shoulder-surf the password
+        password = getpass.getpass("Enter your MySQL root password: ")
+        
+        keyring.set_password(SERVICE_NAME, ACCOUNT_NAME, password)
+        print("Password saved securely in your system's credential manager!\n")
+        
+    return password
