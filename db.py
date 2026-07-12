@@ -1,15 +1,26 @@
 import pymysql
-from auth import use_password 
+from auth import use_password, clear_password 
 
 def create_db():
-    password = use_password()
-
-    conn = pymysql.connect(
-        host="localhost",
-        user="root",
-        password=str(password),
-        autocommit=True
-    )
+    while True:
+        password = use_password()
+        try:
+            conn = pymysql.connect(
+                host="localhost",
+                user="root",
+                password=str(password),
+                autocommit=True
+            )
+            break 
+            
+        except pymysql.err.OperationalError as e:
+            # Error 1045 = Access Denied (Wrong Username/Password)
+            if e.args[0] == 1045: 
+                print("\n Incorrect MySQL password. Let's try that again.")
+                clear_password() 
+            else:
+                # other error not accounted for
+                raise e
 
     cursor = conn.cursor()
 
