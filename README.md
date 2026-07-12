@@ -1,4 +1,4 @@
-# Basic Library Management System
+# Library Management System(Basic)
 
 A simple library Management system that works on singular auth login for both admin and user(students). Initially built on 2025 as grade 12 project by both collaborators, with further upgradation in regards with time.
 
@@ -7,18 +7,18 @@ Using:
 2. Keyring and getpass to securely store sql root password.
 
 
-# ADMIN
+## ADMIN
 
 1. Admin can insert/delete books on the system.
 2. Can check how many books are in circulation and who leased what book
 
 On a glance by in built functions used for safekeep.
 
-# USER
+## USER
 ...
 
-# CONTRIBUTORS
+## CONTRIBUTORS
 
-Backend and SQL Logic: Ucoder69
+Backend and SQL Logic: [Ucoder69](https://github.com/Ucoder69) | [Portfolio](https://ucoder69.github.io/)
 
-Frontend and Integrations: DrakeyIO
+Frontend and Integrations: [DrakeyIO](https://github.com/DrakeyIO)
