@@ -19,3 +19,10 @@ def use_password():
         print("Password saved securely in your system's credential manager!\n")
         
     return password
+    
+def clear_password():
+    """Wipes the stored password if it's incorrect."""
+    try:
+        keyring.delete_password(SERVICE_NAME, ACCOUNT_NAME)
+    except keyring.errors.PasswordDeleteError:
+        pass
